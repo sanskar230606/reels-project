@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.parent {
+  padding: 60px;
+}
+.parent .elem {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #666;
+  padding: 50px 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+.parent .elem h3 {
+  white-space: wrap;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: 100;
+}
+.parent .elem button {
+  padding: 15px 30px;
+  background-color: burlywood;
+  border-radius: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 100;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
