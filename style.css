@@ -219,7 +219,10 @@ main section .allreels::-webkit-scrollbar {
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 530px) {
+  main {
+    padding: 0;
+  }
   main section {
     width: 100%;
   }
