@@ -10,33 +10,217 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.parent {
-  padding: 60px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
-.parent .elem {
+
+main {
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  background-color: #666;
-  padding: 50px 10px;
-  margin-top: 20px;
+  justify-content: center;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 40%), radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.08), transparent 40%), linear-gradient(135deg, #141414, #2b2b2b, #121212);
+  padding: 25px;
+}
+main section {
+  height: 100%;
+  width: 430px;
   border-radius: 20px;
+  margin: auto;
+  box-shadow: 0px 0px 15px rgb(148, 140, 140);
+  overflow: hidden;
 }
-.parent .elem h3 {
-  white-space: wrap;
-  color: white;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-  font-weight: 100;
+main section .allreels {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
-.parent .elem button {
-  padding: 15px 30px;
-  background-color: burlywood;
-  border-radius: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 100;
+main section .allreels .reel {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+main section .allreels .reel video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main section .allreels .reel .mute {
+  background-color: #807070;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: 0.2s ease;
+  z-index: 2;
+}
+main section .allreels .reel .mute i {
+  font-size: 1.3rem;
+  color: wheat;
+  pointer-events: none;
+}
+main section .allreels .reel .mute:hover {
+  scale: 0.9;
+  background-color: rgb(23, 193, 49);
+}
+main section .allreels .reel .mute:active {
+  transform: scale(0.8);
+}
+main section .allreels .reel .bottom {
+  padding: 15px 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.498));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main section .allreels .reel .bottom .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main section .allreels .reel .bottom .user img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+main section .allreels .reel .bottom .user h4 {
+  font-size: 1.3rem;
+  font-weight: 560;
+  cursor: pointer;
+  color: whitesmoke;
+}
+main section .allreels .reel .bottom .user button {
+  padding: 5px 17px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+main section .allreels .reel .bottom .user button:active {
+  background: transparent;
+  color: white;
+  border: 2px solid black;
+}
+main section .allreels .reel .bottom h3 {
+  width: 85%;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: whitesmoke;
+  line-height: 1.2;
+  letter-spacing: 0.03rem;
+}
+main section .allreels .reel .right {
+  height: 100%;
+  width: 15%;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-end;
+  padding-bottom: 35px;
+}
+main section .allreels .reel .right div {
+  width: 50px;
+}
+main section .allreels .reel .right h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  pointer-events: none;
+}
+main section .allreels .reel .right h6 {
+  font-size: 0.9rem;
+  color: white;
+  pointer-events: none;
+}
+main section .allreels .reel .right .like {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+}
+main section .allreels .reel .right .like h4 {
+  font-size: 2.4rem;
+  font-weight: 550;
+}
+main section .allreels .reel .right .like .love {
+  color: red;
+}
+main section .allreels .reel .right .comment {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+main section .allreels .reel .right .comment h4 {
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+main section .allreels .reel .right .repost {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+main section .allreels .reel .right .repost h4 {
+  font-weight: 200;
+  font-size: 1.7rem;
+}
+main section .allreels .reel .right .share {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+main section .allreels .reel .right .share h4 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+main section .allreels .reel .right .save {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+main section .allreels .reel .right .save h4 {
+  font-size: 1.7rem;
+}
+main section .allreels::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  main section {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
